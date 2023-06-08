@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header>Weather</header>
+    <main>
+      <label for="city-names">Select City Here</label>
+      <select
+        name="city-names"
+        id="city-names"
+        onchange="createStationURL()"
+      ></select>
+      <table id="citiesTbl"></table>
+    </main>
+  </body>
+  <footer></footer>
+  <script src="cities-array.js"></script>
+  <script>
+    let cityList = document.getElementById("city-names");
+    for (let city of cities) {
+      let option = document.createElement("option");
+      option.value = city.city;
+      option.text = city.city;
+      cityList.appendChild(option);
+    }
+
+    function createStationURL() {
+      let stationURL = `https://api.weather.gov/points/${option.latitude},${option.longitude}`;
+
+    }
+  </script>
+</html>
